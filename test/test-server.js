@@ -29,23 +29,6 @@ describe('GET /', function() {
     });
   });
 
-  describe('GET /events', function() {
-    it('returns events', function(done) {
-      request(app)
-      .get('/events')
-      .set('Accept', 'application/json')
-      .expect(200)
-      .end((err, res) => {
-        if (err) {
-          return done(err);
-        }
-        chai.expect(JSON.parse(res.text)).to.have.property('events');
-        return done();
-      });
-
-      });
-  });
-
   describe('POST /event', function() {
     it('adds an event', function(done) {
       request(app)
