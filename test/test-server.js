@@ -30,13 +30,6 @@ describe('GET /', function() {
   });
 
   describe('GET /events', function() {
-    it('responds with json', function(done) {
-      request(app)
-        .get('/events')
-        .set('Accept', 'application/json')
-        .expect('Content-Type', /json/)
-        .expect(200, done);
-    });
     it('returns events', function(done) {
       request(app)
       .get('/events')
